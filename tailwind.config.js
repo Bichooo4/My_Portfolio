@@ -29,6 +29,10 @@ export default {
           },
         },
       },
+      fontFamily: {
+        lato: ['Lato', 'sans-serif'],
+        roboto: ['Roboto Condensed', 'sans-serif'],
+      },
     },
   },
   plugins: [],
