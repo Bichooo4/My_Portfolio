@@ -8,7 +8,7 @@ export default function Layout() {
             <header>
                 <NavBar />
             </header>
-            <main className="flex-grow flex justify-center items-center p-4 sm:p-8">
+            <main className="flex-grow flex justify-center items-center border-y-4 border-pageBackground overflow-y-auto">
                 <Outlet />
             </main>
             <footer>
