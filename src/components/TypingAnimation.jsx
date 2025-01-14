@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const TypingAnimation = ({ parts = [], speed = 50 }) => {
+export default function TypingAnimation({ parts = [], speed = 50 }) {
     const [text, setText] = useState("");
     const [isTyping, setIsTyping] = useState(true);
     const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -71,5 +71,3 @@ const TypingAnimation = ({ parts = [], speed = 50 }) => {
         </div>
     );
 };
-
-export default TypingAnimation;
