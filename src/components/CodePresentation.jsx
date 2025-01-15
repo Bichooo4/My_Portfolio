@@ -23,7 +23,7 @@ const codeText = [
 
 export default function CodePresentation() {
     return (
-        <div className="flex flex-col justify-center items-center w-full md:w-[51%] bg-pageBackground text-gray-300 md:p-6 px-4 font-mono relative md:ml-[40px] order-2 md:order-1">
+        <div className="flex flex-col justify-center items-center w-full md:w-[51%] bg-pageBackground text-gray-300 md:p-6 md:pr-0 px-4 font-mono relative md:ml-[40px] order-2 md:order-1">
             <div className="flex justify-center items-center h-full w-full">
                 <LineNumbers />
                 <VerticalLines />
