@@ -1,0 +1,24 @@
+import React from "react";
+
+export default function ContactLink({ platform, handle, href, icon, color }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`group p-6 bg-gray-800/50 rounded-lg border border-gray-700 
+                  hover:border-lime-500 transition-all duration-300 ease-in-out 
+                  transform hover:-translate-y-1 hover:shadow-xl hover:shadow-lime-500/20`}
+    >
+      <div className="flex items-center space-x-4">
+        <div className={`text-gray-400 ${color} transition-colors duration-300`}>
+          {icon}
+        </div>
+        <div className="flex-1">
+          <div className="text-yellow-500 text-sm mb-1">// {platform}</div>
+          <div className="text-white font-medium">{handle}</div>
+        </div>
+      </div>
+    </a>
+  );
+};
