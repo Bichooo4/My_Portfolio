@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import SkillsSideBar from '@/components/SkillsSideBar';
-import SkillLevel from '@/components/SkillLevel';
+import SkillLevel from '@/components/Skills/SkillLevel';
+import SkillsSideBar from '@/components/Skills/SkillsSideBar';
 
 export default function Skills() {
   const [selectedSection, setSelectedSection] = useState('Programming Languages'); // Default selected

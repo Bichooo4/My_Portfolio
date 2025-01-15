@@ -1,6 +1,6 @@
 import React from "react";
-import CodePresentation from "../components/CodePresentation";
-import PersonalHighlight from "../components/PersonalHighlight";
+import CodePresentation from "@/components/Home/CodePresentation";
+import PersonalHighlight from "@/components/Home/PersonalHighlight";
 
 export default function Home() {
     return (
