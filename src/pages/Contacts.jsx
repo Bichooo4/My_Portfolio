@@ -57,7 +57,7 @@ export default function Contacts() {
                 </div>
 
                 {/* Footer Section */}
-                <div className="md:mt-14 mt-6 text-center text-gray-400">
+                <div className="md:mt-14 mt-6 mb-2 text-center text-gray-400">
                     <p className="text-sm">
                         <span className="text-lime-500">&lt;</span>
                         Let&apos;s create something amazing together
