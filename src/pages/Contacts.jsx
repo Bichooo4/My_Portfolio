@@ -6,28 +6,28 @@ import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 export default function Contacts() {
     const contactLinks = [
         {
-            platform: "whatsapp",
+            platform: "Whatsapp",
             handle: "+20 1220056486",
             href: "https://wa.me/201220056486",
             icon: <FaWhatsapp className="w-6 h-6" />,
             color: "hover:text-green-500",
         },
         {
-            platform: "linkedin",
+            platform: "Linkedin",
             handle: "Bichoy Atef",
             href: "https://www.linkedin.com/in/bichoy-atef-5238491b2/",
             icon: <FaLinkedin className="w-6 h-6" />,
             color: "hover:text-blue-500",
         },
         {
-            platform: "gmail",
+            platform: "Gmail",
             handle: "bichoyatef0@gmail.com",
             href: "mailto:bichoyatef0@gmail.com",
             icon: <SiGmail className="w-6 h-6" />,
             color: "hover:text-red-500",
         },
         {
-            platform: "github",
+            platform: "Github",
             handle: "Bichoy Atef",
             href: "https://github.com/BichoyAtech",
             icon: <FaGithub className="w-6 h-6" />,
