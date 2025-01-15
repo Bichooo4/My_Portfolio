@@ -5,7 +5,6 @@ export default function TypingAnimation({ parts = [], speed = 50 }) {
     const [isTyping, setIsTyping] = useState(true);
     const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
-    // Combine all parts into a single string
     const fullText = parts.map(part => part.text).join("");
 
     useEffect(() => {
@@ -22,7 +21,6 @@ export default function TypingAnimation({ parts = [], speed = 50 }) {
         }
     }, [currentTextIndex, isTyping, speed, fullText]);
 
-    // Function to apply styles to different parts of the text
     const renderStyledText = () => {
         let currentPosition = 0;
         return parts.map((part, index) => {
@@ -45,28 +43,23 @@ export default function TypingAnimation({ parts = [], speed = 50 }) {
     };
 
     return (
-        <div className="min-h-[300px] w-full border border-gray-200 rounded-md p-4">
+        <div className="md:min-h-[280px] min-h-[335px] w-full border border-gray-200 rounded-md p-4">
             <div
-                className="font-mono text-xs md:text-base"
+                className="font-mono text-xs md:text-base h-full overflow-hidden"
                 style={{
-                    whiteSpace: 'pre-wrap',
+                    whiteSpace: 'pre-line',
                     lineHeight: '1.5',
-                    minHeight: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'flex-start',
-                    justifyContent: 'flex-start'
+                    textIndent: '-2em',
+                    paddingLeft: '2em'
                 }}
             >
-                <div className="w-full">
-                    {renderStyledText()}
-                    {isTyping && (
-                        <span
-                            className="inline-block w-2 h-4 bg-gray-300 animate-pulse"
-                            style={{ verticalAlign: 'middle' }}
-                        />
-                    )}
-                </div>
+                {renderStyledText()}
+                {isTyping && (
+                    <span
+                        className="inline-block w-2 h-4 bg-gray-300 animate-pulse"
+                        style={{ verticalAlign: 'middle' }}
+                    />
+                )}
             </div>
         </div>
     );
