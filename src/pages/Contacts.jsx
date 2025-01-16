@@ -29,7 +29,7 @@ export default function Contacts() {
         {
             platform: "Github",
             handle: "Bichoy Atef",
-            href: "https://github.com/BichoyAtech",
+            href: "https://github.com/Bichooo4",
             icon: <FaGithub className="w-6 h-6" />,
             color: "hover:text-purple-500",
         },
