@@ -1,17 +1,25 @@
 import React from "react";
 
-export default function ContactLink({ platform, handle, href, icon, color }) {
+export default function ContactLink({
+  platform,
+  handle,
+  href,
+  icon,
+  color = "hover:text-gray-500",
+  tooltip = `Contact me on ${platform}`,
+}) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
+      aria-label={tooltip}
       className={`group p-6 bg-gray-800/50 rounded-lg border border-gray-700 
-                  hover:border-lime-500 transition-all duration-300 ease-in-out 
-                  transform hover:-translate-y-1 hover:shadow-xl hover:shadow-lime-500/20`}
+                hover:border-lime-500 transition-all duration-300 ease-in-out 
+                transform hover:-translate-y-1 hover:shadow-xl hover:shadow-lime-500/20`}
     >
       <div className="flex items-center space-x-4">
-        <div className={`text-gray-400 ${color} transition-colors duration-300`}>
+        <div className={`text-gray-400 ${color} transition-colors duration-300 ease-in-out`}>
           {icon}
         </div>
         <div className="flex-1">
