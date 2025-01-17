@@ -11,7 +11,7 @@ export default function Layout() {
             </header>
 
             {/* Main content area with scrollable content */}
-            <main className="flex-grow mt-[60px] mb-[60px] overflow-y-auto custom-scrollbar">
+            <main className="flex-grow mt-[50px] mb-[50px] overflow-y-auto custom-scrollbar">
                 <Outlet />
             </main>
 
