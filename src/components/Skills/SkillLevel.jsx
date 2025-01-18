@@ -1,47 +1,8 @@
 import React from 'react';
+import { skillLevels } from '@/data/skills';
 
 export default function SkillLevel({ selectedSection }) {
-  // Define skill levels based on the selected section
-  let skills = [];
-
-  if (selectedSection === 'Programming Languages') {
-    skills = [
-      { name: 'HTML', level: 8 },
-      { name: 'CSS', level: 7 },
-      { name: 'JavaScript', level: 9 },
-      { name: 'Python', level: 6 },
-      { name: 'TypeScript', level: 7 },
-    ];
-  } else if (selectedSection === 'Frameworks') {
-    skills = [
-      { name: 'React.js', level: 8 },
-      { name: 'Node.js', level: 7 },
-      { name: 'Next.js', level: 8 },
-      { name: 'Express.js', level: 7 },
-    ];
-  } else if (selectedSection === 'Databases') {
-    skills = [
-      { name: 'MongoDB', level: 8 },
-      { name: 'SQL', level: 7 },
-      { name: 'PostgreSQL', level: 9 },
-      { name: 'MySQL', level: 8 },
-    ];
-  } else if (selectedSection === 'Tools & Applications') {
-    skills = [
-      { name: 'Git', level: 8 },
-      { name: 'Docker', level: 7 },
-      { name: 'Figma', level: 9 },
-      { name: 'Visual Studio Code', level: 8 },
-    ];
-  } else if (selectedSection === 'Soft Skills') {
-    skills = [
-      { name: 'Communication', level: 8 },
-      { name: 'Teamwork', level: 7 },
-      { name: 'Problem-Solving', level: 9 },
-      { name: 'Time Management', level: 8 },
-      { name: 'Adaptability', level: 7 },
-    ];
-  }
+  const skills = skillLevels[selectedSection] || [];
 
   return (
     <div className='grid grid-cols-2 gap-8 text-white mx-20 my-10'>
