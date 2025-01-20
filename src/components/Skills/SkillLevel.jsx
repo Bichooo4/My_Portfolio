@@ -5,30 +5,21 @@ export default function SkillLevel({ selectedSection }) {
   const skills = skillLevels[selectedSection] || [];
 
   return (
-    <div className='grid grid-cols-2 gap-8 text-white mx-20 my-10'>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
       {skills.map((skill, index) => (
-        <div key={index}>
-          <p className='mb-3 text-lg font-medium'>{skill.name}</p>
-          <div className='flex gap-2'>
-            {Array.from({ length: skill.level }).map((_, i) => (
-              <div
-                key={i}
-                className={`h-6 w-6 rounded-sm bg-orange-500 animate-fill`}
-                style={{
-                  animationDelay: `${i * 0.05}s`,
-                  animationDuration: '0.6s',
-                }}
-              ></div>
-            ))}
-            {Array.from({ length: 10 - skill.level }).map((_, i) => (
-              <div
-                key={i + skill.level}
-                className='h-6 w-6 rounded-sm bg-gray-800'
-              ></div>
-            ))}
+        <div key={index} className="bg-gray-900 p-6 rounded-lg shadow-lg">
+          <p className="mb-4 text-lg font-semibold">{skill.name}</p>
+          <div className="w-full bg-gray-700 rounded-full h-4 relative overflow-hidden">
+            <div
+              className="bg-orange-500 h-4 rounded-full animate-fill"
+              style={{
+                width: `${skill.level * 10}%`,
+                animationDuration: `${0.6 + index * 0.1}s`,
+              }}
+            ></div>
           </div>
         </div>
       ))}
     </div>
   );
-};
+}

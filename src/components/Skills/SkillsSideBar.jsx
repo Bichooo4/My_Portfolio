@@ -1,64 +1,67 @@
 import React, { useState } from 'react';
 import { FaTools, FaUserTie } from 'react-icons/fa';
 import { SlArrowRight, SlArrowDown } from 'react-icons/sl';
-import { hardSkills, softSkills } from '@/data/skills'; // Import data from skills.js
+import { hardSkills, softSkills } from '@/data/skills';
 
 export default function SkillsSideBar({ onSelectSection, selectedSection }) {
-  const [showHardSkills, setShowHardSkills] = useState(true);
+    const [showHardSkills, setShowHardSkills] = useState(true);
 
-  return (
-    <div className='text-white'>
-      {/* Styles */}
-      <style>
-        {`
+    return (
+        <div className="text-white h-full py-6 px-6 sm:px-10">
+            <style>
+                {`
           .selected {
             color: #F0B65A;
-            padding-left: 7px;
+            background: rgba(240, 182, 90, 0.1);
+            border-left: 4px solid #F0B65A;
+          }
+          .sidebar-item:hover {
+            background: rgba(240, 182, 90, 0.1);
           }
         `}
-      </style>
+            </style>
 
-      {/* Hard Skills Section */}
-      <div className='pl-10'>
-        <div
-          className='flex items-center justify-between cursor-pointer mb-2 py-2'
-          onClick={() => setShowHardSkills(!showHardSkills)}
-        >
-          <div className='flex items-center'>
-            {showHardSkills ? (
-              <SlArrowDown size={16} className='mr-2' />
-            ) : (
-              <SlArrowRight size={16} className='mr-2' />
-            )}
-            <FaTools size={16} className='mr-2' />
-            <span className='text-sm font-semibold'>{hardSkills.title}</span>
-          </div>
-        </div>
-        {showHardSkills &&
-          hardSkills.sections.map((section, index) => (
-            <div key={index} className='pl-6'>
-              <div
-                className={`flex items-center cursor-pointer mb-2 py-2 ${section.title === selectedSection ? 'selected' : ''
-                  }`}
-                onClick={() => onSelectSection(section.title)}
-              >
-                <span className='text-sm font-medium'>{section.title}</span>
-              </div>
+            {/* Hard Skills Section */}
+            <div>
+                <div
+                    className="flex items-center justify-between cursor-pointer mb-4 text-sm font-semibold"
+                    onClick={() => setShowHardSkills(!showHardSkills)}
+                >
+                    <div className="flex items-center gap-2">
+                        {showHardSkills ? (
+                            <SlArrowDown size={16} />
+                        ) : (
+                            <SlArrowRight size={16} />
+                        )}
+                        <FaTools size={16} />
+                        <span>{hardSkills.title}</span>
+                    </div>
+                </div>
+                {showHardSkills &&
+                    hardSkills.sections.map((section, index) => (
+                        <div key={index}>
+                            <div
+                                className={`sidebar-item flex items-center gap-2 cursor-pointer py-2 px-4 rounded-md mb-2 ${section.title === selectedSection ? 'selected' : ''
+                                    }`}
+                                onClick={() => onSelectSection(section.title)}
+                            >
+                                <span>{section.title}</span>
+                            </div>
+                        </div>
+                    ))}
             </div>
-          ))}
-      </div>
 
-      {/* Soft Skills Section */}
-      <div className='mt-4 pl-10'>
-        <div
-          className={`flex items-center cursor-pointer mb-2 py-2 ${softSkills.title === selectedSection ? 'selected' : ''
-            }`}
-          onClick={() => onSelectSection(softSkills.title)}
-        >
-          <FaUserTie size={16} className='mr-2' />
-          <span className='text-sm font-semibold'>{softSkills.title}</span>
+            {/* Soft Skills Section */}
+            <div className="mt-6">
+                <div
+                    className={`sidebar-item flex items-center gap-2 cursor-pointer py-2 px-4 rounded-md ${softSkills.title === selectedSection ? 'selected' : ''
+                        }`}
+                    onClick={() => onSelectSection(softSkills.title)}
+                >
+                    <FaUserTie size={16} />
+                    <span>{softSkills.title}</span>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
-}
+    );
+};

@@ -38,7 +38,7 @@ export default function Projects() {
                 {/* Progress Bar */}
                 <div className="mb-4 sm:mb-8 flex items-center justify-between gap-4">
                     <div className="h-1 flex-1 bg-gray-700 rounded-full overflow-hidden">
-                        <div 
+                        <div
                             className="h-full bg-lime-500 transition-all duration-300"
                             style={{ width: `${((currentProjectIndex + 1) / projects.length) * 100}%` }}
                         />
@@ -62,9 +62,9 @@ export default function Projects() {
                         <div className="bg-[#2c2c33] p-3 sm:p-4 border-b border-gray-700 flex items-center justify-between">
                             <h2 className="text-base sm:text-lg font-semibold text-lime-500">{project.name}</h2>
                             <div className="flex items-center gap-2">
-                                <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-red-500"/>
-                                <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-yellow-500"/>
-                                <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-green-500"/>
+                                <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-red-500" />
+                                <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-yellow-500" />
+                                <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-green-500" />
                             </div>
                         </div>
 
@@ -91,23 +91,23 @@ export default function Projects() {
 
                         {/* Action Buttons */}
                         <div className="px-4 sm:px-6 pb-4 sm:pb-6 flex flex-wrap justify-center gap-2 sm:gap-4">
-                            <button 
+                            <button
                                 onClick={() => window.open(project.livePreview, '_blank')}
                                 className="group flex items-center gap-2 bg-lime-500 text-gray-900 px-4 sm:px-6 py-2 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 hover:bg-lime-400 hover:shadow-lg hover:shadow-lime-500/30 active:scale-95"
                             >
                                 <FaExternalLinkAlt className="text-base sm:text-lg group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300" />
                                 <span>Live Preview</span>
                             </button>
-                            
-                            <button 
+
+                            <button
                                 onClick={() => window.open(project.github, '_blank')}
                                 className="group flex items-center gap-2 bg-gray-800 text-lime-500 px-4 sm:px-6 py-2 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 hover:bg-gray-700 hover:shadow-lg hover:shadow-lime-500/20 border border-lime-500/20 hover:border-lime-500/50 active:scale-95"
                             >
                                 <FaGithub className="text-lg sm:text-xl group-hover:rotate-12 transition-transform duration-300" />
                                 <span>View Code</span>
                             </button>
-                            
-                            <button 
+
+                            <button
                                 onClick={() => setShowDetails(!showDetails)}
                                 className="group flex items-center gap-2 bg-gray-800 text-lime-500 px-4 sm:px-6 py-2 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 hover:bg-gray-700 hover:shadow-lg hover:shadow-lime-500/20 border border-lime-500/20 hover:border-lime-500/50 active:scale-95"
                             >
@@ -118,7 +118,7 @@ export default function Projects() {
 
                         {/* Project Info */}
                         {showDetails && (
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, height: 0 }}
                                 animate={{ opacity: 1, height: "auto" }}
                                 exit={{ opacity: 0, height: 0 }}
@@ -131,7 +131,7 @@ export default function Projects() {
                                     <h3 className="text-lime-500 text-sm sm:text-base font-medium">Technologies Used:</h3>
                                     <div className="flex flex-wrap gap-2">
                                         {project.technologies?.map((tech, index) => (
-                                            <span 
+                                            <span
                                                 key={index}
                                                 className="px-2 sm:px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs sm:text-sm hover:bg-gray-700 transition-colors duration-300"
                                             >
