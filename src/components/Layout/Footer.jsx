@@ -26,7 +26,7 @@ export default function Footer() {
             ariaLabel: 'Visit GitHub',
             icon: <FaGithub className="h-5 w-5" />,
             label: 'github',
-            hoverClass: 'group-hover:text-purple-500', // Updated to purple
+            hoverClass: 'group-hover:text-purple-500',
         },
         {
             id: 'gmail',
@@ -46,10 +46,12 @@ export default function Footer() {
         <footer className="bg-gray-900 border-t border-gray-800">
             <div className="flex items-stretch h-[40px] w-full">
                 {/* Find me section */}
-                <div className="flex items-center px-4 text-gray-400">
-                    <span className="text-sm font-medium">find me in:</span>
+                <div className="flex items-center px-8 text-gray-400 hover:bg-gray-800/50 transition-colors duration-200">
+                    <span className="text-sm font-medium hover:text-gray-200 transition-colors duration-200 cursor-pointer">
+                        _get in touch
+                    </span>
                 </div>
-                
+
                 <Divider />
 
                 {/* Social Links */}
@@ -85,4 +87,4 @@ export default function Footer() {
             </div>
         </footer>
     );
-}
+};

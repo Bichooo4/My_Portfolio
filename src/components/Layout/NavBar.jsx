@@ -11,10 +11,9 @@ export default function NavBar() {
     ];
 
     const getLinkStyle = (isActive) =>
-        `flex items-center justify-center h-full sm:w-[200px] w-[75px] text-sm sm:text-base ${
-            isActive 
-                ? 'text-lime-500 border-t-2 border-lime-500' 
-                : 'text-gray-400 hover:text-gray-200 border-t-2 border-gray-900'
+        `flex items-center justify-center h-full sm:w-[200px] w-[75px] text-sm sm:text-base ${isActive
+            ? 'text-lime-500 border-t-2 border-lime-500'
+            : 'text-gray-400 hover:text-gray-200 border-t-2 border-gray-900'
         }`;
 
     const Divider = () => <div className="h-full w-0.5 sm:w-1 bg-gray-800"></div>;
@@ -38,4 +37,4 @@ export default function NavBar() {
             </div>
         </nav>
     );
-}
+};

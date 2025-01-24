@@ -6,12 +6,12 @@ import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
 export default function Contacts() {
     const contactLinks = [
         {
-            id: "whatsapp", // Added unique IDs
+            id: "whatsapp",
             platform: "Whatsapp",
             handle: "+20 1220056486",
             href: "https://wa.me/201220056486",
             icon: <FaWhatsapp className="w-6 h-6" />,
-            color: "hover:text-green-500",
+            color: "group-hover:text-green-500",
         },
         {
             id: "linkedin",
@@ -19,7 +19,7 @@ export default function Contacts() {
             handle: "Bichoy Atef",
             href: "https://www.linkedin.com/in/bichoy-atef-5238491b2/",
             icon: <FaLinkedin className="w-6 h-6" />,
-            color: "hover:text-blue-500",
+            color: "group-hover:text-blue-500",
         },
         {
             id: "gmail",
@@ -27,7 +27,7 @@ export default function Contacts() {
             handle: "bichoyatef0@gmail.com",
             href: "mailto:bichoyatef0@gmail.com",
             icon: <SiGmail className="w-6 h-6" />,
-            color: "hover:text-red-500",
+            color: "group-hover:text-red-500",
         },
         {
             id: "github",
@@ -35,32 +35,31 @@ export default function Contacts() {
             handle: "Bichoy Atef",
             href: "https://github.com/Bichooo4",
             icon: <FaGithub className="w-6 h-6" />,
-            color: "hover:text-purple-500",
+            color: "group-hover:text-purple-500",
         },
     ];
 
     return (
         <div className="bg-gray-900 h-full w-full flex flex-col items-center justify-center px-4 py-16">
-            <div className="relative z-10 w-full max-w-screen-lg"> {/* Constrained width */}
-                {/* Header Section */}
+            <div className="relative z-10 w-full max-w-screen-lg">
                 <div className="mb-6 md:mb-16 text-center">
                     <h1 className="text-lime-500 text-4xl sm:text-4xl md:text-7xl md:mt-7 mt-24 mb-5 font-bold tracking-tight">
-            // GET_IN_TOUCH
+                        // GET_IN_TOUCH
                     </h1>
                     <div className="h-1 w-16 md:w-32 bg-lime-500 mx-auto mb-8"></div>
                     <p className="text-gray-300 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
-                        If you have an idea for a website or mobile application, feel free to reach out. I'd be delighted to discuss your vision and explore how we can bring it to life together. Let's connect and turn your ideas into reality!
+                        If you have an idea for a website or mobile application, feel free to reach out.
+                        I'd be delighted to discuss your vision and explore how we can bring it to life together.
+                        Let's connect and turn your ideas into reality!
                     </p>
                 </div>
 
-                {/* Contact Links Section */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-x-10 w-full max-w-2xl mx-auto">
                     {contactLinks.map((link) => (
                         <ContactLink key={link.id} {...link} />
                     ))}
                 </div>
 
-                {/* Footer Section */}
                 <div className="md:mt-10 mt-6 mb-2 text-center text-gray-400">
                     <p className="text-sm">
                         <span className="text-lime-500">&lt; </span>
