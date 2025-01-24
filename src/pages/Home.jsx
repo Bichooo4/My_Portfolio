@@ -4,7 +4,7 @@ import PersonalHighlight from "@/components/Home/PersonalHighlight";
 
 export default function Home() {
     return (
-        <div className="flex flex-col md:flex-row h-full w-full bg-pageBackground">
+        <div className="flex flex-col md:flex-row h-full w-full bg-gray-900">
             <CodePresentation />
             <PersonalHighlight />
         </div>

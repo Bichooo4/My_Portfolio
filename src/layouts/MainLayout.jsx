@@ -4,9 +4,9 @@ import Footer from '@/components/Layout/Footer';
 
 export default function Layout() {
     return (
-        <div className="flex flex-col h-screen bg-pageBackground overflow-hidden">
+        <div className="flex flex-col h-screen bg-gray-900 overflow-hidden">
             {/* Fixed NavBar at the top */}
-            <header className="fixed top-0 left-0 right-0 z-10">
+            <header className="fixed top-0 left-0 right-0 z-10 border-b border-gray-800">
                 <NavBar />
             </header>
 
@@ -16,9 +16,9 @@ export default function Layout() {
             </main>
 
             {/* Fixed Footer at the bottom */}
-            <footer className="fixed bottom-0 left-0 right-0 z-10">
+            <footer className="fixed bottom-0 left-0 right-0 z-10 border-t border-gray-800">
                 <Footer />
             </footer>
         </div>
     );
-};
+}

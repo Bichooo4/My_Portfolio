@@ -15,7 +15,7 @@ export default function AnimatedSidebar({ menuItems, isOpen, setIsOpen }) {
     }, [containerRef]);
 
     return (
-        <div className="relative h-full">
+        <div className="relative">
             <motion.nav
                 initial={false}
                 animate={isOpen ? "open" : "closed"}
@@ -26,9 +26,10 @@ export default function AnimatedSidebar({ menuItems, isOpen, setIsOpen }) {
                 <motion.div
                     className="absolute top-0 left-0 bottom-0 w-full bg-[#1a1b26] shadow-xl"
                     variants={sidebarVariants}
+                    style={{ originX: 0, originY: 0 }}
                 />
                 <Navigation menuItems={menuItems} />
-                <MenuToggle toggle={() => setIsOpen(!isOpen)} />
+                <MenuToggle toggle={() => setIsOpen(!isOpen)} isOpen={isOpen} />
             </motion.nav>
         </div>
     );
@@ -46,7 +47,6 @@ const Navigation = ({ menuItems }) => (
 );
 
 const MenuItem = ({ item, index }) => {
-    // Updated colors to match the image
     const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
     const bgColors = ["bg-pink-500", "bg-purple-500", "bg-indigo-500", "bg-blue-500", "bg-violet-500"];
 
@@ -69,12 +69,12 @@ const MenuItem = ({ item, index }) => {
     );
 };
 
-const MenuToggle = ({ toggle }) => (
+const MenuToggle = ({ toggle, isOpen }) => (
     <button
         onClick={toggle}
-        className="outline-none border-none cursor-pointer fixed top-4 left-4 w-12 h-12 rounded-full bg-lime-500 flex items-center justify-center hover:bg-lime-600 transition-colors z-[60]"
+        className="outline-none border-none cursor-pointer relative w-10 h-10 rounded-full bg-lime-500 flex items-center justify-center hover:bg-lime-600 transition-colors"
     >
-        <svg width="23" height="23" viewBox="0 0 23 23" className="relative">
+        <svg width="20" height="20" viewBox="0 0 23 23">
             <Path
                 variants={{
                     closed: { d: "M 2 2.5 L 20 2.5" },
@@ -121,7 +121,7 @@ const sidebarVariants = {
         }
     }),
     closed: {
-        clipPath: "circle(24px at 40px 40px)", // Slightly smaller circle to hide behind button
+        clipPath: "circle(20px at 40px 40px)",
         transition: {
             delay: 0.2,
             type: "spring",
@@ -130,7 +130,6 @@ const sidebarVariants = {
         }
     }
 };
-
 
 const navVariants = {
     open: {

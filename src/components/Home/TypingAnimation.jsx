@@ -1,66 +1,82 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-export default function TypingAnimation({ parts = [], speed = 50 }) {
-    const [text, setText] = useState("");
-    const [isTyping, setIsTyping] = useState(true);
+export default function TypingAnimation({
+    parts = [],
+    speed = 30,
+    cursorClassName = "animate-pulse text-emerald-500",
+    onComplete
+}) {
+    const [typedLines, setTypedLines] = useState([]);
+    const [currentPartIndex, setCurrentPartIndex] = useState(0);
     const [currentTextIndex, setCurrentTextIndex] = useState(0);
-
-    const fullText = parts.map(part => part.text).join("");
+    const containerRef = useRef(null);
 
     useEffect(() => {
-        if (!isTyping) return;
-
-        if (currentTextIndex < fullText.length) {
-            const timeout = setTimeout(() => {
-                setText(fullText.slice(0, currentTextIndex + 1));
-                setCurrentTextIndex(prev => prev + 1);
-            }, speed);
-            return () => clearTimeout(timeout);
-        } else {
-            setIsTyping(false);
+        if (currentPartIndex >= parts.length) {
+            onComplete?.();
+            return;
         }
-    }, [currentTextIndex, isTyping, speed, fullText]);
 
-    const renderStyledText = () => {
-        let currentPosition = 0;
-        return parts.map((part, index) => {
-            const start = currentPosition;
-            const end = start + part.text.length;
-            const displayedText = text.slice(start, end);
-            currentPosition = end;
+        const currentPart = parts[currentPartIndex];
+        const isLastCharacter = currentTextIndex === currentPart.text.length - 1;
 
-            return (
-                <span key={index} className={part.className}>
-                    {displayedText.split('\n').map((line, lineIndex, array) => (
-                        <React.Fragment key={lineIndex}>
-                            {line}
-                            {lineIndex < array.length - 1 && <br />}
-                        </React.Fragment>
-                    ))}
-                </span>
-            );
-        });
-    };
+        const timeout = setTimeout(() => {
+            if (currentTextIndex < currentPart.text.length) {
+                setCurrentTextIndex(prev => prev + 1);
+            } else {
+                // Complete current line
+                setTypedLines(prev => [
+                    ...prev, 
+                    { 
+                        text: currentPart.text, 
+                        className: currentPart.className 
+                    }
+                ]);
+                setCurrentPartIndex(prev => prev + 1);
+                setCurrentTextIndex(0);
+            }
+        }, isLastCharacter ? speed * 2 : speed);
+
+        return () => clearTimeout(timeout);
+    }, [currentPartIndex, currentTextIndex, parts, speed, onComplete]);
+
+    // Autoscroll to bottom
+    useEffect(() => {
+        if (containerRef.current) {
+            containerRef.current.scrollTop = containerRef.current.scrollHeight;
+        }
+    }, [typedLines]);
+
+    const currentPart = parts[currentPartIndex];
+    const currentPartialText = currentPart 
+        ? currentPart.text.slice(0, currentTextIndex) 
+        : '';
 
     return (
-        <div className="md:min-h-[280px] min-h-[335px] w-full border border-gray-200 rounded-md p-4">
-            <div
-                className="font-mono text-xs md:text-base h-full overflow-hidden"
-                style={{
-                    whiteSpace: 'pre-line',
-                    lineHeight: '1.5',
-                    textIndent: '-2em',
-                    paddingLeft: '2em'
-                }}
-            >
-                {renderStyledText()}
-                {isTyping && (
-                    <span
-                        className="inline-block w-2 h-4 bg-gray-300 animate-pulse"
-                        style={{ verticalAlign: 'middle' }}
-                    />
-                )}
-            </div>
+        <div 
+            ref={containerRef}
+            className="w-full h-64 overflow-auto scrollbar-hidden"
+            style={{ 
+                whiteSpace: 'pre-line', 
+                lineHeight: '1.5',
+                scrollBehavior: 'smooth'
+            }}
+        >
+            {typedLines.map((line, index) => (
+                <span 
+                    key={`line-${index}`} 
+                    className={line.className}
+                >
+                    {line.text}
+                </span>
+            ))}
+
+            {currentPartIndex < parts.length && (
+                <span className={currentPart.className}>
+                    {currentPartialText}
+                    <span className={`${cursorClassName} ml-1`}>▋</span>
+                </span>
+            )}
         </div>
     );
 };

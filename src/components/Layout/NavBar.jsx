@@ -11,13 +11,16 @@ export default function NavBar() {
     ];
 
     const getLinkStyle = (isActive) =>
-        `flex items-center justify-center h-full sm:w-[200px] w-[75px] text-sm sm:text-base ${isActive ? 'text-white border-t-4 border-red-500' : 'text-gray-500 hover:text-white border-t-4 border-pageBackground'
+        `flex items-center justify-center h-full sm:w-[200px] w-[75px] text-sm sm:text-base ${
+            isActive 
+                ? 'text-lime-500 border-t-2 border-lime-500' 
+                : 'text-gray-400 hover:text-gray-200 border-t-2 border-gray-900'
         }`;
 
-    const Divider = () => <div className="h-full w-0.5 sm:w-1 bg-pageBackground"></div>;
+    const Divider = () => <div className="h-full w-0.5 sm:w-1 bg-gray-800"></div>;
 
     return (
-        <nav className="bg-navFooterpageBackground overflow-x-auto whitespace-nowrap">
+        <nav className="bg-gray-900 overflow-x-auto whitespace-nowrap">
             <div className="flex items-center justify-start h-[35px] sm:h-[45px] w-full">
                 {navLinks.map(({ to, label }) => (
                     <React.Fragment key={to}>
@@ -31,8 +34,8 @@ export default function NavBar() {
                         <Divider />
                     </React.Fragment>
                 ))}
-                <div className="flex-grow h-[35px] sm:h-[45px] border-t-4 border-pageBackground"></div>
+                <div className="flex-grow h-[35px] sm:h-[45px] border-t-2 border-gray-900"></div>
             </div>
         </nav>
     );
-};
+}

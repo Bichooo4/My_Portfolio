@@ -33,11 +33,11 @@ export default function Projects() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-pageBackground py-6 sm:py-12 px-2 sm:px-4">
+        <div className="min-h-screen bg-gray-900 py-6 sm:py-12 px-2 sm:px-4">
             <div className="max-w-4xl mx-auto">
                 {/* Progress Bar */}
                 <div className="mb-4 sm:mb-8 flex items-center justify-between gap-4">
-                    <div className="h-1 flex-1 bg-gray-700 rounded-full overflow-hidden">
+                    <div className="h-1 flex-1 bg-gray-800 rounded-full overflow-hidden">
                         <div
                             className="h-full bg-lime-500 transition-all duration-300"
                             style={{ width: `${((currentProjectIndex + 1) / projects.length) * 100}%` }}
@@ -57,10 +57,12 @@ export default function Projects() {
                     transition={{ duration: 0.3 }}
                     className="relative"
                 >
-                    <div className="group bg-[#1c1c21] rounded-xl sm:rounded-2xl border border-gray-700 overflow-hidden shadow-xl hover:shadow-lime-500/20 hover:shadow-2xl transition-all duration-300 hover:border-lime-500/30">
+                    <div className="group bg-gray-900 rounded-xl sm:rounded-2xl border border-gray-800 overflow-hidden shadow-xl hover:shadow-lime-500/20 hover:shadow-2xl transition-all duration-300 hover:border-lime-500/30">
                         {/* Header */}
-                        <div className="bg-[#2c2c33] p-3 sm:p-4 border-b border-gray-700 flex items-center justify-between">
-                            <h2 className="text-base sm:text-lg font-semibold text-lime-500">{project.name}</h2>
+                        <div className="bg-gray-800/50 p-3 sm:p-4 border-b border-gray-800 flex items-center justify-between">
+                            <h2 className="text-base sm:text-lg font-semibold text-lime-500">
+                                {project.name}
+                            </h2>
                             <div className="flex items-center gap-2">
                                 <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-red-500" />
                                 <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-yellow-500" />
@@ -69,7 +71,7 @@ export default function Projects() {
                         </div>
 
                         {/* Brief Description */}
-                        <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-700">
+                        <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-800 bg-gray-800/30">
                             <p className="text-gray-300 text-xs sm:text-sm leading-relaxed line-clamp-2">
                                 {project.shortDescription || project.description.split('.')[0] + '.'}
                             </p>
@@ -77,9 +79,9 @@ export default function Projects() {
 
                         {/* Code Section */}
                         <div className="p-4 sm:p-6">
-                            <div className="bg-[#2c2c33] rounded-xl overflow-hidden group-hover:shadow-lg group-hover:shadow-lime-500/5 transition-all duration-300">
+                            <div className="bg-gray-800/50 rounded-xl overflow-hidden group-hover:shadow-lg group-hover:shadow-lime-500/5 transition-all duration-300">
                                 <div className="flex p-3 sm:p-4">
-                                    <div className="flex flex-col text-right pr-3 sm:pr-4 border-r border-gray-600">
+                                    <div className="flex flex-col text-right pr-3 sm:pr-4 border-r border-gray-700">
                                         <LineNumbers start={1} end={7} opacityRange={{ start: 3, end: 5 }} />
                                     </div>
                                     <div className="flex-1 pl-3 sm:pl-4 font-mono text-xs sm:text-sm text-lime-500 overflow-x-auto">
@@ -122,7 +124,7 @@ export default function Projects() {
                                 initial={{ opacity: 0, height: 0 }}
                                 animate={{ opacity: 1, height: "auto" }}
                                 exit={{ opacity: 0, height: 0 }}
-                                className="p-4 sm:p-6 bg-[#1c1c21] border-t border-gray-700"
+                                className="p-4 sm:p-6 bg-gray-800/30 border-t border-gray-800"
                             >
                                 <p className="text-gray-300 text-sm sm:text-base mb-4 leading-relaxed">
                                     {project.description}

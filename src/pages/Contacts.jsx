@@ -40,7 +40,7 @@ export default function Contacts() {
     ];
 
     return (
-        <div className="bg-pageBackground h-full w-full flex flex-col items-center justify-center px-4 py-16">
+        <div className="bg-gray-900 h-full w-full flex flex-col items-center justify-center px-4 py-16">
             <div className="relative z-10 w-full max-w-screen-lg"> {/* Constrained width */}
                 {/* Header Section */}
                 <div className="mb-6 md:mb-16 text-center">

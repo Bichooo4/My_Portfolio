@@ -5,61 +5,84 @@ import { FaWhatsapp, FaLinkedin, FaGithub } from 'react-icons/fa';
 export default function Footer() {
     const socialLinks = [
         {
+            id: 'whatsapp',
             href: 'https://wa.me/201220056486',
             ariaLabel: 'Visit WhatsApp',
-            icon: <FaWhatsapp className="h-8 w-8" />,
-            hoverClass: 'hover:text-green-500',
+            icon: <FaWhatsapp className="h-5 w-5" />,
+            label: 'whatsapp',
+            hoverClass: 'group-hover:text-green-500',
         },
         {
+            id: 'linkedin',
             href: 'https://www.linkedin.com/in/bichoy-atef-5238491b2/',
             ariaLabel: 'Visit LinkedIn',
-            icon: <FaLinkedin className="h-8 w-8" />,
-            hoverClass: 'hover:text-blue-600',
+            icon: <FaLinkedin className="h-5 w-5" />,
+            label: 'linkedin',
+            hoverClass: 'group-hover:text-blue-500',
         },
         {
+            id: 'github',
             href: 'https://github.com/Bichooo4',
             ariaLabel: 'Visit GitHub',
-            icon: <FaGithub className="h-8 w-8" />,
-            hoverClass: 'hover:text-white',
+            icon: <FaGithub className="h-5 w-5" />,
+            label: 'github',
+            hoverClass: 'group-hover:text-purple-500', // Updated to purple
         },
         {
+            id: 'gmail',
             href: 'mailto:bichoyatef0@gmail.com',
             ariaLabel: 'Send Email via Gmail',
-            icon: <SiGmail className="h-8 w-8" />,
-            hoverClass: 'hover:text-red-500',
+            icon: <SiGmail className="h-5 w-5" />,
+            label: 'gmail',
+            hoverClass: 'group-hover:text-red-500',
         },
     ];
 
-    const Divider = () => <div className="h-full w-0.5 sm:w-1 bg-pageBackground"></div>;
+    const Divider = () => (
+        <div className="h-full w-0.5 bg-gray-800"></div>
+    );
 
     return (
-        <footer className="bg-navFooterpageBackground">
-            <div className="flex items-center justify-start h-[40px] sm:h-[45px] w-full">
-
-                {/* Footer Text */}
-                <p className="flex justify-start items-center text-lg text-gray-500 hover:text-white cursor-pointer sm:w-[170px] w-[140px] ml-2 sm:ml-6">
-                    _get in touch
-                </p>
-
-                {/* Divider */}
+        <footer className="bg-gray-900 border-t border-gray-800">
+            <div className="flex items-stretch h-[40px] w-full">
+                {/* Find me section */}
+                <div className="flex items-center px-4 text-gray-400">
+                    <span className="text-sm font-medium">find me in:</span>
+                </div>
+                
                 <Divider />
 
-                {/* Social Media Links */}
-                {socialLinks.map(({ href, ariaLabel, icon, hoverClass }, index) => (
-                    <React.Fragment key={index}>
+                {/* Social Links */}
+                {socialLinks.map(({ id, href, ariaLabel, icon, label, hoverClass }) => (
+                    <React.Fragment key={id}>
                         <a
-                            className={`flex justify-center items-center text-gray-500 ${hoverClass} w-12`}
-                            aria-label={ariaLabel}
                             href={href}
+                            aria-label={ariaLabel}
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="group flex items-center space-x-2 px-4 text-gray-400 hover:bg-gray-800/50 transition-colors duration-200"
                         >
-                            {icon}
+                            <span className={`transition-colors duration-200 ${hoverClass}`}>
+                                {icon}
+                            </span>
+                            <span className="text-sm hidden sm:block group-hover:text-gray-200 transition-colors duration-200">
+                                {label}
+                            </span>
                         </a>
                         <Divider />
                     </React.Fragment>
                 ))}
+
+                {/* Copyright section */}
+                <div className="flex items-center ml-auto px-4 text-gray-400">
+                    <span className="text-sm">
+                        @2024
+                        <span className="hidden sm:inline"> - Made with</span>
+                        <span className="text-lime-500 mx-1">❤</span>
+                        <span className="hidden sm:inline">by Bichoy</span>
+                    </span>
+                </div>
             </div>
         </footer>
     );
-};
+}
