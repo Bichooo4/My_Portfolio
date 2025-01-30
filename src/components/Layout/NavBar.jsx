@@ -16,11 +16,11 @@ export default function NavBar() {
             : 'text-gray-400 hover:text-gray-200 border-t-2 border-gray-900'
         }`;
 
-    const Divider = () => <div className="h-full w-0.5 sm:w-1 bg-gray-800"></div>;
+    const Divider = () => <div className='h-full w-0.5 sm:w-1 bg-gray-800'></div>;
 
     return (
-        <nav className="bg-gray-900 overflow-x-auto whitespace-nowrap">
-            <div className="flex items-center justify-start h-[35px] sm:h-[45px] w-full">
+        <nav className='bg-gray-900 overflow-x-auto whitespace-nowrap'>
+            <div className='flex items-center justify-start h-[35px] sm:h-[45px] w-full'>
                 {navLinks.map(({ to, label }) => (
                     <React.Fragment key={to}>
                         <NavLink
@@ -33,7 +33,7 @@ export default function NavBar() {
                         <Divider />
                     </React.Fragment>
                 ))}
-                <div className="flex-grow h-[35px] sm:h-[45px] border-t-2 border-gray-900"></div>
+                <div className='flex-grow h-[35px] sm:h-[45px] border-t-2 border-gray-900'></div>
             </div>
         </nav>
     );
