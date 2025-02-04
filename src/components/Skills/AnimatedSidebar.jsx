@@ -25,7 +25,7 @@ export default function AnimatedSidebar({ menuItems, isOpen, setIsOpen, selected
             >
                 {/* Animated background – do not block pointer events */}
                 <motion.div
-                    className="absolute top-0 left-0 bottom-0 w-full bg-[#1a1b26] shadow-xl rounded-r-lg"
+                    className="absolute top-0 -left-40 bottom-0 w-full bg-[#1a1b26] shadow-xl rounded-r-lg"
                     variants={sidebarVariants}
                     style={{ originX: 0, originY: 0, pointerEvents: 'none' }}
                 />
@@ -49,7 +49,7 @@ export default function AnimatedSidebar({ menuItems, isOpen, setIsOpen, selected
 
 const Navigation = ({ menuItems, isOpen }) => (
     <motion.ul
-        className="list-none p-8 pt-24 m-0 absolute top-0 w-full"
+        className="list-none p-8 pt-24 m-0 absolute top-0 -left-32 w-full"
         variants={navVariants}
         animate={isOpen ? 'open' : 'closed'}
     >

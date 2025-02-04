@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { hardSkills, softSkills, menuItems } from '@/data/skills';
 import { motion, AnimatePresence } from 'framer-motion';
 import SkillLevel from '@/components/Skills/SkillLevel';
 import SkillsSideBar from '@/components/Skills/SkillsSideBar';
 import AnimatedSidebar from '@/components/Skills/AnimatedSidebar';
+import { hardSkills, softSkills, menuItems } from '@/data/skills';
 
 export default function Skills() {
   const [isOpen, setIsOpen] = useState(false);
