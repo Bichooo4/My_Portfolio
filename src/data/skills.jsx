@@ -1,12 +1,18 @@
+// skills.js
+import React from 'react';
+import { Code, Layers, Database, UserCheck, Wrench } from 'lucide-react';
+
 export const hardSkills = {
   title: 'Hard Skills',
   sections: [
     {
       title: 'Programming Languages',
+      icon: <Code className="w-6 h-6 text-lime-500" />,
       items: ['C++', 'Java', 'Python', 'JavaScript', 'TypeScript', 'HTML', 'CSS'],
     },
     {
       title: 'Frameworks & Libraries',
+      icon: <Layers className="w-6 h-6 text-lime-500" />,
       items: [
         'React.js',
         'Node.js',
@@ -20,10 +26,12 @@ export const hardSkills = {
     },
     {
       title: 'Databases',
+      icon: <Database className="w-6 h-6 text-lime-500" />,
       items: ['SQL (PostgreSQL, MySQL)', 'NoSQL (MongoDB)'],
     },
     {
       title: 'Tools & Applications',
+      icon: <Wrench className="w-6 h-6 text-lime-500" />,
       items: [
         'Git/GitHub',
         'VS Code',
@@ -38,6 +46,7 @@ export const hardSkills = {
 
 export const softSkills = {
   title: 'Soft Skills',
+  icon: <UserCheck className="w-6 h-6 text-lime-500" />,
   items: [
     'Problem-Solving',
     'Teamwork',
@@ -106,25 +115,29 @@ export const projects = [
     description: `
       - Frontend: ReactJS.
       - Backend: Node.js with MongoDB integration.
-      - Features: Role-based access control for admins and users, dynamic user ranks to determine quiz difficulty.`,
+      - Features: Role-based access control for admins and users, dynamic user ranks to determine quiz difficulty.
+    `,
   },
   {
     title: 'E-commerce Store Backend for Car Spare Parts',
     description: `
       - Backend: Node.js with MongoDB.
-      - Focus: Scalability, high traffic handling, and efficient transactions.`,
+      - Focus: Scalability, high traffic handling, and efficient transactions.
+    `,
   },
   {
     title: 'Java Desktop Games Application',
     description: `
       - Developed with Java Swing for GUI and Java Socket for server-client communication.
-      - Highlights: Proficiency in Java development and networking concepts.`,
+      - Highlights: Proficiency in Java development and networking concepts.
+    `,
   },
   {
     title: 'Password Management Mobile Application',
     description: `
       - Platform: React Native Expo with TypeScript.
-      - Features: Secure password storage, encryption algorithms, intuitive calculator GUI.`,
+      - Features: Secure password storage, encryption algorithms, intuitive calculator GUI.
+    `,
   },
 ];
 
@@ -134,3 +147,13 @@ Proven track record in crafting scalable backend systems and responsive web appl
 Passionate about innovation and committed to continuous learning in software engineering.
 Eager to further develop skills and contribute to impactful projects in a dynamic team environment.
 `;
+
+// Export a combined menuItems array (for example, for use in your AnimatedSidebar)
+export const menuItems = [
+  ...hardSkills.sections,
+  {
+    title: softSkills.title,
+    icon: softSkills.icon,
+    items: softSkills.items,
+  },
+];

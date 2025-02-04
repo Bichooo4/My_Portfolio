@@ -45,8 +45,8 @@ export default function SkillsSideBar({ onSelectSection, selectedSection }) {
                 >
                   <div
                     className={`relative group cursor-pointer py-2 px-4 rounded-md mb-2 transition-all duration-300
-                      ${section.title === selectedSection 
-                        ? 'bg-lime-500/10 text-lime-500' 
+                      ${section.title === selectedSection
+                        ? 'bg-lime-500/10 text-lime-500'
                         : 'hover:bg-gray-800/50 text-gray-400 hover:text-white'}`}
                     onClick={() => onSelectSection(section.title)}
                   >
@@ -75,8 +75,8 @@ export default function SkillsSideBar({ onSelectSection, selectedSection }) {
         >
           <div
             className={`relative group cursor-pointer py-2 px-4 rounded-md transition-all duration-300
-              ${softSkills.title === selectedSection 
-                ? 'bg-lime-500/10 text-lime-500' 
+              ${softSkills.title === selectedSection
+                ? 'bg-lime-500/10 text-lime-500'
                 : 'hover:bg-gray-800/50 text-gray-400 hover:text-white'}`}
             onClick={() => onSelectSection(softSkills.title)}
           >
