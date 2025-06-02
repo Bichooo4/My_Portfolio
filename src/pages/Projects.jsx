@@ -92,7 +92,9 @@ export default function Projects() {
                         </div>
 
                         {/* Action Buttons */}
-                        <div className="px-4 sm:px-6 pb-4 sm:pb-6 flex flex-wrap justify-center gap-2 sm:gap-4">
+                        <div className="px-4 sm:px-6 pb-4 sm:pb-6 flex justify-center">
+                            {/* Commented out Live Preview and GitHub buttons */}
+                            {/* 
                             <button
                                 onClick={() => window.open(project.livePreview, '_blank')}
                                 className="group flex items-center gap-2 bg-lime-500 text-gray-900 px-4 sm:px-6 py-2 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 hover:bg-lime-400 hover:shadow-lg hover:shadow-lime-500/30 active:scale-95"
@@ -108,13 +110,15 @@ export default function Projects() {
                                 <FaGithub className="text-lg sm:text-xl group-hover:rotate-12 transition-transform duration-300" />
                                 <span>View Code</span>
                             </button>
+                            */}
 
+                            {/* Centered Details Button */}
                             <button
                                 onClick={() => setShowDetails(!showDetails)}
-                                className="group flex items-center gap-2 bg-gray-800 text-lime-500 px-4 sm:px-6 py-2 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 hover:bg-gray-700 hover:shadow-lg hover:shadow-lime-500/20 border border-lime-500/20 hover:border-lime-500/50 active:scale-95"
+                                className="group flex items-center gap-3 bg-gradient-to-r from-lime-500 to-emerald-500 text-gray-900 px-6 sm:px-8 py-3 rounded-lg text-sm sm:text-base font-semibold transition-all duration-300 hover:from-lime-400 hover:to-emerald-400 hover:shadow-lg hover:shadow-lime-500/40 active:scale-95 transform hover:scale-105"
                             >
                                 <FaInfoCircle className="text-base sm:text-lg group-hover:scale-110 transition-transform duration-300" />
-                                <span>Details</span>
+                                <span>{showDetails ? 'Hide Details' : 'View Details'}</span>
                             </button>
                         </div>
 

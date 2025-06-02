@@ -19,7 +19,6 @@ export default function SkillLevel({ selectedSection }) {
           <div className="relative bg-gray-900 p-6 rounded-lg">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-mono text-lime-500">{skill.name}</h3>
-              <span className="text-sm font-mono text-gray-400">{skill.level * 10}%</span>
             </div>
             <div className="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
               <motion.div

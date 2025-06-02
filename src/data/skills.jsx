@@ -8,20 +8,19 @@ export const hardSkills = {
     {
       title: 'Programming Languages',
       icon: <Code className="w-6 h-6 text-lime-500" />,
-      items: ['C++', 'Java', 'Python', 'JavaScript', 'TypeScript', 'HTML', 'CSS'],
+      items: ['C++', 'C#', 'Java', 'Python', 'JavaScript', 'TypeScript'],
     },
     {
-      title: 'Frameworks & Libraries',
+      title: 'Frameworks & Technologies',
       icon: <Layers className="w-6 h-6 text-lime-500" />,
       items: [
-        'React.js',
-        'Node.js',
-        'Next.js',
-        'Express.js',
-        'React Native (Expo)',
-        'Electron',
+        'ReactJS',
+        'NodeJS',
+        'React Native',
         'Java Swing',
-        'Tailwind CSS',
+        'Electron',
+        'Next.js',
+        'Express.js'
       ],
     },
     {
@@ -30,15 +29,27 @@ export const hardSkills = {
       items: ['SQL (PostgreSQL, MySQL)', 'NoSQL (MongoDB)'],
     },
     {
-      title: 'Tools & Applications',
+      title: 'Web Technologies',
+      icon: <Code className="w-6 h-6 text-lime-500" />,
+      items: ['HTML5', 'CSS3', 'Tailwind CSS', 'RESTful APIs'],
+    },
+    {
+      title: 'Development Tools',
       icon: <Wrench className="w-6 h-6 text-lime-500" />,
       items: [
         'Git/GitHub',
         'VS Code',
         'NetBeans IDE',
-        'Proteus',
-        'Docker',
-        'Figma',
+        'Proteus'
+      ],
+    },
+    {
+      title: 'Hardware & Electronics',
+      icon: <Wrench className="w-6 h-6 text-lime-500" />,
+      items: [
+        'PCB Design',
+        'Circuit Simulation (Proteus)',
+        'Electronics Circuit Analysis'
       ],
     },
   ],
@@ -48,55 +59,58 @@ export const softSkills = {
   title: 'Soft Skills',
   icon: <UserCheck className="w-6 h-6 text-lime-500" />,
   items: [
-    'Problem-Solving',
+    'Problem-solving',
     'Teamwork',
     'Research',
-    'Communication',
-    'Time Management',
-    'Adaptability',
+    'Fast learner'
   ],
 };
 
 export const skillLevels = {
   'Programming Languages': [
-    { name: 'C++', level: 7 },
+    { name: 'C++', level: 8 },
+    { name: 'C#', level: 7 },
     { name: 'Java', level: 8 },
-    { name: 'Python', level: 8 },
+    { name: 'Python', level: 7 },
     { name: 'JavaScript', level: 9 },
-    { name: 'TypeScript', level: 7 },
-    { name: 'HTML', level: 9 },
-    { name: 'CSS', level: 8 },
+    { name: 'TypeScript', level: 8 },
   ],
-  'Frameworks & Libraries': [
-    { name: 'React.js', level: 9 },
-    { name: 'Node.js', level: 8 },
-    { name: 'Next.js', level: 8 },
-    { name: 'Express.js', level: 8 },
-    { name: 'React Native (Expo)', level: 8 },
-    { name: 'Electron', level: 6 },
+  'Frameworks & Technologies': [
+    { name: 'ReactJS', level: 9 },
+    { name: 'NodeJS', level: 8 },
+    { name: 'React Native', level: 8 },
     { name: 'Java Swing', level: 7 },
-    { name: 'Tailwind CSS', level: 9 },
+    { name: 'Electron', level: 6 },
+    { name: 'Next.js', level: 7 },
+    { name: 'Express.js', level: 8 },
   ],
   'Databases': [
     { name: 'PostgreSQL', level: 8 },
-    { name: 'MySQL', level: 7 },
+    { name: 'MySQL', level: 8 },
     { name: 'MongoDB', level: 8 },
   ],
-  'Tools & Applications': [
+  'Web Technologies': [
+    { name: 'HTML5', level: 9 },
+    { name: 'CSS3', level: 8 },
+    { name: 'Tailwind CSS', level: 8 },
+    { name: 'RESTful APIs', level: 8 },
+  ],
+  'Development Tools': [
     { name: 'Git/GitHub', level: 9 },
     { name: 'VS Code', level: 9 },
     { name: 'NetBeans IDE', level: 7 },
-    { name: 'Proteus', level: 6 },
-    { name: 'Docker', level: 7 },
-    { name: 'Figma', level: 9 },
+    { name: 'Proteus', level: 7 },
+  ],
+  'Hardware & Electronics': [
+    { name: 'PCB Design', level: 7 },
+    { name: 'Circuit Simulation (Proteus)', level: 8 },
+    { name: 'Electronics Circuit Analysis', level: 7 },
   ],
   'Soft Skills': [
-    { name: 'Problem-Solving', level: 9 },
+    { name: 'Problem-solving', level: 9 },
     { name: 'Teamwork', level: 8 },
     { name: 'Research', level: 8 },
-    { name: 'Communication', level: 8 },
-    { name: 'Time Management', level: 8 },
-    { name: 'Adaptability', level: 7 },
+    { name: 'Fast learner', level: 9 },
   ],
 };
 
@@ -104,8 +118,8 @@ export const languages = {
   title: 'Languages',
   items: [
     { name: 'Arabic', proficiency: 'Native' },
-    { name: 'English', proficiency: 'Very Good' },
-    { name: 'French', proficiency: 'Very Good' },
+    { name: 'English', proficiency: 'Fluent' },
+    { name: 'French', proficiency: 'Excellent' },
   ],
 };
 
@@ -113,39 +127,46 @@ export const projects = [
   {
     title: 'Quiz Web Application',
     description: `
-      - Frontend: ReactJS.
-      - Backend: Node.js with MongoDB integration.
-      - Features: Role-based access control for admins and users, dynamic user ranks to determine quiz difficulty.
+      - Frontend: ReactJS for user-friendly interface with smooth and interactive use.
+      - Backend: Node.js connected to MongoDB for efficient data handling and storage.
+      - Features: Role-based access control system for admin and user management, adaptive difficulty system based on user rankings and performance tracking.
+      - Architecture: Scalable design to handle multiple concurrent users.
     `,
   },
   {
-    title: 'E-commerce Store Backend for Car Spare Parts',
+    title: 'Cross-Platform Password Management Mobile App',
     description: `
-      - Backend: Node.js with MongoDB.
-      - Focus: Scalability, high traffic handling, and efficient transactions.
+      - Platform: React Native Expo with TypeScript for cross-platform compatibility.
+      - Security: Advanced encryption algorithms for secure password storage.
+      - UI/UX: Intuitive calculator-style GUI for enhanced user experience.
+      - Compatibility: Optimized for both iOS and Android devices.
+    `,
+  },
+  {
+    title: 'E-commerce Backend System for Automotive Parts',
+    description: `
+      - Backend: Node.js with MongoDB for robust infrastructure and efficient data management.
+      - Performance: Optimized for high-traffic scenarios and transaction processing.
+      - API: RESTful APIs for seamless frontend integration.
+      - Focus: Inventory management and scalable e-commerce functionalities.
     `,
   },
   {
     title: 'Java Desktop Games Application',
     description: `
-      - Developed with Java Swing for GUI and Java Socket for server-client communication.
-      - Highlights: Proficiency in Java development and networking concepts.
-    `,
-  },
-  {
-    title: 'Password Management Mobile Application',
-    description: `
-      - Platform: React Native Expo with TypeScript.
-      - Features: Secure password storage, encryption algorithms, intuitive calculator GUI.
+      - Development: Java Swing for interactive GUI development.
+      - Networking: Java Socket programming for real-time client-server communication.
+      - Architecture: Modular, maintainable code structure for game logic and user interface.
+      - Skills: Advanced Java development and network programming concepts.
     `,
   },
 ];
 
 export const professionalSummary = `
-Experienced Full-Stack Web Developer adept in the MERN stack, JavaScript, and React Native for mobile development, with two years of hands-on experience.
-Proven track record in crafting scalable backend systems and responsive web applications.
-Passionate about innovation and committed to continuous learning in software engineering.
-Eager to further develop skills and contribute to impactful projects in a dynamic team environment.
+Experienced Full-Stack Software Engineer with hands-on experience in MERN stack development, JavaScript, and cross-platform mobile applications. 
+Proficient in C++, C#, and Java programming languages with a strong background in database management (SQL, MongoDB) and software testing methodologies. 
+Demonstrated expertise in developing scalable backend systems, responsive web applications, and desktop applications using modern frameworks. 
+Strong problem-solving abilities with a passion for innovation and commitment to continuous learning in software engineering.
 `;
 
 // Export a combined menuItems array (for example, for use in your AnimatedSidebar)
