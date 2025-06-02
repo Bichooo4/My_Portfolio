@@ -1,12 +1,12 @@
+import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { FaTools, FaUserTie } from 'react-icons/fa';
-import { SlArrowRight, SlArrowDown } from 'react-icons/sl';
-import { motion } from 'framer-motion';
 import { hardSkills, softSkills } from '@/data/skills';
+import { SlArrowRight, SlArrowDown } from 'react-icons/sl';
 
 export default function SkillsSideBar({ onSelectSection, selectedSection }) {
   const [showHardSkills, setShowHardSkills] = useState(true);
-
+  
   return (
     <div className="text-white h-full py-6 px-6 sm:px-10 bg-gray-900/50 backdrop-blur-lg">
       <motion.div
