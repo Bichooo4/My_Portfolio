@@ -58,8 +58,9 @@ export default function CodePresentation() {
                             className="w-full flex justify-center mt-6"
                         >
                             <motion.a
-                                href="/bichoy-cv.pdf" // Update with your actual CV path
-                                download="Bichoy_CV.pdf"
+                                href="https://drive.google.com/file/d/1PHqHK4rCscp9xZryMMvTOLnDPLmgh_8d/view?usp=sharing"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white px-8 py-3 rounded-xl font-semibold flex items-center gap-2 shadow-lg hover:shadow-emerald-500/40 transition-all duration-300"
@@ -75,11 +76,12 @@ export default function CodePresentation() {
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
                                         strokeWidth={2}
-                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                                        d="M4 12h16m-7-7l7 7-7 7"
                                     />
                                 </svg>
-                                Download CV
+                                Check My CV
                             </motion.a>
+
                         </motion.div>
                     )}
                 </div>
